@@ -1,13 +1,28 @@
 server:
   port: 8781
 
-#ָ��ע�����ĵ�ַ
+
 eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
 
-#���������
+#服务名称
 spring:
   application:
     name: order-service
+
+#修改调用超时时间
+feign:
+  hystrix:
+    enabled: true
+  client:
+    config:
+      default:
+       connectTimeout: 2000  #超时 时间最好不要超过两秒
+       readTimeout: 2000
+
+#自定义负载均衡策略
+#product-service:
+#  ribbon:
+#    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
