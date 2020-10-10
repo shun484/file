@@ -1,5 +1,6 @@
 package com.apigateway.filter;
 
+import com.apigateway.utils.TokenUtil;
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
 import com.netflix.zuul.exception.ZuulException;
@@ -44,12 +45,10 @@ public class LoginFilter extends ZuulFilter {
         HttpServletRequest request = currentContext.getRequest();
 
         // true拦截   false不拦截
-        if("/apigateway/api/v1/product/list".equalsIgnoreCase(request.getRequestURI())) {
-            return true;
+        if("/login/index".equalsIgnoreCase(request.getRequestURI())) {
+            return false;
         }
-
-
-        return false;
+        return true;
     }
 
     /**
@@ -72,6 +71,17 @@ public class LoginFilter extends ZuulFilter {
         }
         // 效验token是否存在
         if (StringUtils.isEmpty(token)) {
+            requestContext.setSendZuulResponse(false);
+            requestContext.setResponseStatusCode(HttpStatus.SC_UNAUTHORIZED);
+        }
+
+        // 效验token
+        try{
+            if (!TokenUtil.verifyJWT(token)) {
+                requestContext.setSendZuulResponse(false);
+                requestContext.setResponseStatusCode(HttpStatus.SC_UNAUTHORIZED);
+            }
+        }catch (Exception e){
             requestContext.setSendZuulResponse(false);
             requestContext.setResponseStatusCode(HttpStatus.SC_UNAUTHORIZED);
         }
