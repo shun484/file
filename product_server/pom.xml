@@ -40,6 +40,13 @@
                 </exclusion>
             </exclusions>
         </dependency>
+
+        <!--sleuth 依赖-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-zipkin</artifactId>
+            <version>2.1.7.RELEASE</version>
+        </dependency>
     </dependencies>
 
     <dependencyManagement>

@@ -1,0 +1,26 @@
+server:
+  port: 9000
+
+#��������
+spring:
+  application:
+    name: api-geteway
+
+#����ע������
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+#�Զ���·��ӳ��
+zuul:
+  routes:
+    orde-service:
+      path: /apigateway/**
+      service-id: orde-service
+    product-service:
+      path: /apigateway/**
+      service-id: product-service
+  #ͳһ���Ϊ��������ã�������ں���
+#  ignored-patterns: /*-service/**
+  sensitive-headers:

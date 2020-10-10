@@ -2,6 +2,8 @@ package com.product_server.controller;
 
 import com.product_server.model.Product;
 import com.product_server.service.ProductService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -9,8 +11,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/ve/product")
+@RequestMapping("/api/v1/product")
 public class ProductController {
+
+    private final Logger logger = LoggerFactory.getLogger(getClass());
 
     @Value("${server.port}")
     private String port;
@@ -24,7 +28,7 @@ public class ProductController {
      */
     @RequestMapping("/list")
     private Object list(){
-        System.out.println(port);
+        logger.info("pro list");
         return service.listProduct();
     }
 

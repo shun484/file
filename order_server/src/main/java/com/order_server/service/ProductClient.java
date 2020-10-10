@@ -8,6 +8,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 @FeignClient(name ="product-service",fallback = ProductClientImpl.class)
 public interface ProductClient {
 
-    @GetMapping("/api/ve/product/find")
+    @GetMapping("/api/v1/product/find")
     String findById(@RequestParam(value = "id")Integer id);
 }

@@ -2,6 +2,8 @@ package com.product_server.service.impl;
 
 import com.product_server.model.Product;
 import com.product_server.service.ProductService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
@@ -10,6 +12,8 @@ import java.util.*;
 public class ProductServiceImpl implements ProductService {
 
     private static final Map<Integer,Product> hashMap = new HashMap<>();
+
+    private final Logger logger = LoggerFactory.getLogger(getClass());
 
     static {
         Product p1 = new Product(1, "小米", 999, 10);
@@ -22,6 +26,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public List<Product> listProduct() {
+        logger.info("pro listProduct");
         Collection<Product> collection = hashMap.values();
         List<Product> list = new ArrayList<>(collection);
         return list;
