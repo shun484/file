@@ -8,9 +8,9 @@ spring:
     config:
       server:
         git:
-          url: https://gitee.com/helloAccept/config-cloud
-          username: 13561066995
-          password: shun321.
+           uri: https://gitee.com/helloAccept/config-cloud
+           username: 13561066995
+           password: shun321.
 eureka:
   client:
     serviceUrl:
