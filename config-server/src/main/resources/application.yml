@@ -11,6 +11,8 @@ spring:
            uri: https://gitee.com/helloAccept/config-cloud
            username: 13561066995
            password: shun321.
+           timeout: 5
+           default-label: master
 eureka:
   client:
     serviceUrl:
