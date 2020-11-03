@@ -5,6 +5,17 @@ server:
 spring:
   application:
     name: api-geteway
+  datasource:
+    dynamic:
+      enable: true
+    config:
+      master:
+        url: jdbc:mysql://127.0.0.1:3306/xcm-user?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false
+        username: root
+        password: 123456
+        driver-class-name: com.mysql.jdbc.Driver
+        type: com.alibaba.druid.pool.DruidDataSource
+      cluster:
 
 #����ע������
 eureka:
@@ -24,3 +35,11 @@ zuul:
   #ͳһ���Ϊ��������ã�������ں���
 #  ignored-patterns: /*-service/**
   sensitive-headers:
+
+
+mybatis-plus:
+  mapper-locations: classpath:/mapper/*Mapper.xml,classpath:/mapper/**/*Mapper.xml
+  typeAliasesPackage: com.apigateway.entity
+  #驼峰命名
+  configuration:
+    map-underscore-to-camel-case: true

@@ -2,25 +2,26 @@ package com.apigateway.serivce.impl;
 
 import com.apigateway.entity.User;
 import com.apigateway.serivce.UserSerivce;
-import com.apigateway.utils.TokenUtil;
 import org.springframework.stereotype.Service;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
 @Service
 public class UserSerivceImpl implements UserSerivce {
 
+
     public static final Map<Long, User> hashMap = new HashMap<>();
 
-    static {
+   /* static {
         User user = new User(1L,"admin","123456");
         hashMap.put(user.getId(),user);
-    }
+    }*/
 
 
     @Override
     public String loginIndex(User user) {
-        Collection<User> collection = hashMap.values();
+       /* Collection<User> collection = hashMap.values();
 
         List<User> list = new ArrayList<>(collection);
 
@@ -45,7 +46,14 @@ public class UserSerivceImpl implements UserSerivce {
         String out = "";
         if(list.size() >0){
             out = userList.get(0);
-        }
-        return out;
+        }*/
+        return null;
+    }
+
+    @Override
+    public User getLogin(String userName, String password) {
+
+       // return mapper.getLogin(userName,password);
+        return null;
     }
 }

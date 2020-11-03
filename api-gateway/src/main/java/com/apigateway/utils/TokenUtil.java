@@ -3,7 +3,6 @@ package com.apigateway.utils;
 import com.alibaba.fastjson.JSON;
 import com.apigateway.entity.TokenHeader;
 import com.apigateway.entity.TokenPlayload;
-import com.apigateway.entity.User;
 
 import java.util.UUID;
 
@@ -150,9 +149,9 @@ public class TokenUtil {
         return refreshToken;
     }
 
-    public static void main(String[] args) throws Exception {
+ /*   public static void main(String[] args) throws Exception {
         String jwt = getToken(new User(1L,"你是逗逼","123456"));
         System.out.println("jwt:"+jwt);
         System.out.println("verifyJWT:"+verifyJWT(jwt));
-    }
+    }*/
 }

@@ -8,8 +8,11 @@ package com.apigateway.entity;
  */
 public class User {
     private Long id;
-    private String name;
-    private String pwd;
+    private String userName; //用户
+    private String userPassword; //密码
+    private String image;  //头像
+    private Integer UserType;  //类型
+
 
     public Long getId() {
         return id;
@@ -19,27 +22,35 @@ public class User {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
-    public String getPwd() {
-        return pwd;
+    public String getUserPassword() {
+        return userPassword;
     }
 
-    public void setPwd(String pwd) {
-        this.pwd = pwd;
+    public void setUserPassword(String userPassword) {
+        this.userPassword = userPassword;
     }
 
-    public User(Long id, String name, String pwd) {
-        this.id = id;
-        this.name = name;
-        this.pwd = pwd;
+    public String getImage() {
+        return image;
     }
 
+    public void setImage(String image) {
+        this.image = image;
+    }
 
+    public Integer getUserType() {
+        return UserType;
+    }
+
+    public void setUserType(Integer userType) {
+        UserType = userType;
+    }
 }
