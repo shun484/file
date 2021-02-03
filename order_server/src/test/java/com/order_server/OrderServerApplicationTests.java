@@ -12,6 +12,7 @@ class OrderServerApplicationTests {
     void contextLoads() {
 
         AtomicInteger integer = new AtomicInteger();
+        System.out.println(integer);
     }
 
 }
