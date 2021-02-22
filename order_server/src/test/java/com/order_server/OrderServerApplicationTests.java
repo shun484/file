@@ -20,6 +20,8 @@ class OrderServerApplicationTests {
 
         AtomicBoolean atomicBoolean1 = new AtomicBoolean();
         System.out.println(atomicBoolean1);
+        AtomicBoolean atomicBoolean2 = new AtomicBoolean();
+
     }
 
 }
