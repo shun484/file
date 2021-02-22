@@ -17,6 +17,9 @@ class OrderServerApplicationTests {
 
         AtomicBoolean atomicBoolean = new AtomicBoolean();
         System.out.println(atomicBoolean);
+
+        AtomicBoolean atomicBoolean1 = new AtomicBoolean();
+        System.out.println(atomicBoolean1);
     }
 
 }
